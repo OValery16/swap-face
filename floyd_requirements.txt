@@ -1,0 +1,8 @@
+pathlib==1.0.1
+scandir==1.6
+h5py==2.7.1
+opencv-python==3.3.0.10
+scikit-image
+dlib==19.9.0
+face_recognition
+tqdm
