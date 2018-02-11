@@ -73,4 +73,8 @@ Input            |  Output
 ![](/image/Casino-Royale-Eva-Green-Daniel-Craig.jpg?raw=true)  |  ![](/image/Casino-Royale-Eva-Green-Daniel-Craig_v2.jpg?raw=true)
 ![](/image/james-bond-casino-royale.jpg?raw=true)  |  ![](/image/james-bond-casino-royale_v2.jpg?raw=true)
 
+## Moral implication
+
+The goal of this project is education purpose. With AI area, it become easy for anyone to fake video, pictures and news. As someone smart said one day: "With great power comes great responsibility".
+
 
