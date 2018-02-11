@@ -59,6 +59,10 @@ The version I release can be run on any computer or virtual machines (as long as
 
 The nice thing is that you can also run it easily on floydhub (which is a cloud GPU company). Please note that I don't work for this company (just that you often need GPU to train such model)
 
+## The weights
+
+You can download the weights [there](https://drive.google.com/file/d/1J1PgGZDCufCxZ6vEwHwnM7czAXjIliH5/view?usp=sharing)
+
 ## Result
 
 Input            |  Output
