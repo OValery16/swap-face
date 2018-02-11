@@ -66,7 +66,6 @@ Input            |  Output
 ![](/image/CR_2012.jpg?raw=true)  |  ![](/image/CR_2012_v2.jpg?raw=true)
 ![](/image/bond.jpg?raw=true)  |  ![](/image/bond_v2.jpg?raw=true)
 ![](/image/casino_royale_movie_image_james_bond__1_.jpg?raw=true)  |  ![](/image/casino_royale_movie_image_james_bond__1__v2.jpg?raw=true)
-![](/image/Casino-Royale.jpg?raw=true)  |  ![](/image/Casino-Royale_v2.jpg?raw=true)
 ![](/image/Casino-Royale-Eva-Green-Daniel-Craig.jpg?raw=true)  |  ![](/image/Casino-Royale-Eva-Green-Daniel-Craig_v2.jpg?raw=true)
 ![](/image/james-bond-casino-royale.jpg?raw=true)  |  ![](/image/james-bond-casino-royale_v2.jpg?raw=true)
 
