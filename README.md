@@ -1,39 +1,39 @@
 # swap-face
 
-This is complete guide for the swap-face algorithm known as deepFakes. 
+This is a complete guide for the swap-face algorithm known as deepFakes. 
 
-## Why this project ?
+## Why this project?
 
-The goal of this project is education purpose. The deepFakes project got viral on the intenet (with all the moral implication that come with it), but very few people really understand how it works. In fact, it is relatively simple>
+The goal of this project is education purpose. The deepFakes project got viral on the internet (with all the moral implication that come with it), but very few people really understand how it works. In fact, it is relatively simple>
 
-The youtube video about deepfake made by Siraj Raval also gives good insight about deepfakes, and I invite you to check its video.
+The youtube video about deepfake made by Siraj Raval also gives a good insight about deepfakes, and I invite you to check its video.
 
 ## Coding Challenge
 
-Coding challenge presented in deepFakes by Siraj Raval.
+The coding challenge presented in deepFakes by Siraj Raval.
 
 This coding challenge is to train a swap-face algorithm.
 
-The submission file are the three Ipython Notebooks: 
+The submission files are the three Ipython Notebooks: 
 
-1.  	Training data generation.ipynb
-2.  	Train.ipynb
+1.      Training data generation.ipynb
+2.      Train.ipynb
 3.      Prediction.ipynb
 
 ## James bond swapping-face
 
-I was born in 1988. So for me, James Bond has always been Pierce Brosnan (even Daniel craig doesn't play that bad). As a result, today we will learn how to train a nework that swap the face of Daniel Craig and replace it by Pierce Brosnan. The result can be seen below.
+I was born in 1988. So for me, James Bond has always been Pierce Brosnan (even Daniel Craig doesn't play that bad). As a result, today we will learn how to train a network that swap the face of Daniel Craig and replace it by Pierce Brosnan. The result can be seen below.
 
 ![](image/jamesSwap.png?raw=true)
 
-## What id DeepFakes ?
+## What id DeepFakes?
 
 Deepfake is implemented as an autoencoder.
-The face of the actor 1 is cropped and aligned to his face. Then the autoencoder learn how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error.
+The face of the actor 1 is cropped and aligned to his face. Then the autoencoder learns how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error.
 
 ![](image/encoder1.JPG?raw=true)
 
-The face of the actor 2 is cropped and aligned to his face. Then the autoencoder learn how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error. The interesting part is that the encoder is the same for actor 1 and 2.
+The face of the actor 2 is cropped and aligned to his face. Then the autoencoder learns how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error. The interesting part is that the encoder is the same for actor 1 and 2.
 
 ![](image/encoder2.JPG?raw=true)
 
@@ -43,13 +43,13 @@ Note: these images don t belong to me and comes from the animation in the youtub
 
 ## Transfer Learning
 
-In contrast to the base version of Deepfakes, we provide a very conveniant way to speed up the training process via transfer learning. The idea is to load the weight of a pretrained network (for the same network configuration but for another face pair such as Donald ump and Nicolas Cage) These weights are used as a starting point to learn new weight. The netork will therefore converge faster thant if it would be trained from scratch. \n",
+In contrast to the base version of Deepfakes, we provide a very convenient way to speed up the training process via transfer learning. The idea is to load the weight of a pre-trained network (for the same network configuration but for another face pair such as Donald ump and Nicolas Cage) These weights are used as a starting point to learn new weight. The network will, therefore, converge faster than if it would be trained from scratch. \n",
 
 More advanced technique exists to apply transfer learning to autoencoder such [here](https://www.ijcai.org/Proceedings/15/Papers/578.pdf)
 
-## The dependancies
+## The dependencies
 
-Associated with this project, there is a file called "floyd_requirements.txt" which lists all libraries that needs to be installed before to run the application.
+Associated with this project, there is a file called "floyd_requirements.txt" which lists all libraries that need to be installed before to run the application.
 
 You install them with sudo pip install <library name>
 
@@ -75,6 +75,10 @@ Input            |  Output
 
 ## Moral implication
 
-The goal of this project is education purpose. With AI area, it become easy for anyone to fake video, pictures and news. As someone smart said one day: "With great power comes great responsibility".
+The goal of this project is education purpose. With AI area, it becomes easy for anyone to fake video, pictures, and news. As someone smart said one day: "With great power comes great responsibility".
+
+## Additional discutions
+
+Autoencoder is great tool for producing images which respect the probability distribution of the original ones. However, I believe that Generative Adversarial Networks (such as cycle-gan) remains a great way to train autoencoder, and surpass the generation capability of standard autoencoder.
 
 
