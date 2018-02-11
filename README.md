@@ -4,7 +4,7 @@ This is complete guide for the swap-face algorithm known as deepFakes.
 
 ## Why this project ?
 
-The goal of this project is education purpose. The deepFakes project got viral on the intenet (with all the moral implication that come with it), but very few people really understand how it works.
+The goal of this project is education purpose. The deepFakes project got viral on the intenet (with all the moral implication that come with it), but very few people really understand how it works. In fact, it is relatively simple>
 
 The youtube video about deepfake made by Siraj Raval also gives good insight about deepfakes, and I invite you to check its video.
 
@@ -24,18 +24,18 @@ The submission file are the three Ipython Notebooks:
 
 I was born in 1988. So for me, James Bond has always been Pierce Brosnan (even Daniel craig doesn't play that bad). As a result, today we will learn how to train a nework that swap the face of Daniel Craig and replace it by Pierce Brosnan. The result can be seen below.
 
-<img src=\"image/jamesSwap.png\">
+![](image/jamesSwap.png?raw=true)
 
 ## What id DeepFakes ?
 
 Deepfake is implemented as an autoencoder.
 The face of the actor 1 is cropped and aligned to his face. Then the autoencoder learn how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error.
 
-<img src=\"image/encoder1.JPG\">
+![](image/encoder1.JPG?raw=true)
 
 The face of the actor 2 is cropped and aligned to his face. Then the autoencoder learn how to encode and decode (reconstruct) the face. The goal here is to minimize the reconstruction error. The interesting part is that the encoder is the same for actor 1 and 2.
 
-<img src=\"image/encoder2.JPG\">
+![](image/encoder2.JPG?raw=true)
 
 The goal is to find a mathematical function that for a face of the actor 1, outputs a face that looks like the actor 2.
 
