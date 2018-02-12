@@ -41,6 +41,17 @@ The goal is to find a mathematical function that for a face of the actor 1, outp
 
 Note: these images don t belong to me and comes from the animation in the youtube video about deepfake made by Siraj Raval
 
+## Autoencoder: how do it work ?
+
+
+Auto encoder wants to find a function `f(x)` &asymp; ` x `where x is your image (here, the size is arbitrary chosen to be 64 by 64 with 3 channels (RBG) ). For that, we have an **encoder** which goal is to encode your image in a smaller representation (Here, we choose 8 by 8 with 512 channels ), and a **decoder** which goal is to use this representation and get back the original images. 
+
+You could see an autoencoder as WinZip. You have a folder that you want to compress in zip. First, WinZip will parse your folder and find out some pattern (some data that are more useful than others) then it will take advantage of this information to encode these data on less bit. Finally, you end up with a zip file with the same information by encoded differently. Later if you give this file to a friend this friend needs to decode the zip file in order to read its content. We call that lossless compression (you don't lose information). In the case of autoencoder, it does a kind of lossy compression (the data that you get back at the end is an approximation of the initial data). 
+
+The goal of an autoencoder is to find the function `f(x) = decoder(encoder(x))` &asymp;  `x` that approximates the best. For that (in contrast of WinZip or WinRAR) it takes advantage of the nature of `x`. (1) x is an image. (2) x shows the same face but with different angle, lightening condition ... (1) often means that you might need to use convolution operations. (2) implies that you need to decompose your face into its atomic components, such as the shape of the noise, the shape of the smile, the wrinkle ...
+
+You should see the output of the encoder as 512 different images of 8 by 8. Each of these images gives some insight about the noise shape, the ear shape ... These features represent the persons face and will be used by the decoder to reconstruct the image.
+
 ## Transfer Learning
 
 In contrast to the base version of Deepfakes, we provide a very convenient way to speed up the training process via transfer learning. The idea is to load the weight of a pre-trained network (for the same network configuration but for another face pair such as Donald ump and Nicolas Cage) These weights are used as a starting point to learn new weight. The network will, therefore, converge faster than if it would be trained from scratch. \n",
@@ -77,7 +88,7 @@ Input            |  Output
 
 The goal of this project is education purpose. With AI area, it becomes easy for anyone to fake video, pictures, and news. As someone smart said one day: "With great power comes great responsibility".
 
-## Additional discutions
+## Additional discussions
 
 Autoencoder is great tool for producing images which respect the probability distribution of the original ones. However, I believe that Generative Adversarial Networks (such as cycle-gan) remains a great way to train autoencoder, and surpass the generation capability of standard autoencoder.
 
