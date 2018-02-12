@@ -41,7 +41,7 @@ The goal is to find a mathematical function that for a face of the actor 1, outp
 
 Note: these images don t belong to me and comes from the animation in the youtube video about deepfake made by Siraj Raval
 
-## Autoencoder: how do it work ?
+## Autoencoder: how does it work ?
 
 
 Auto encoder wants to find a function `f(x)` &asymp; ` x `where x is your image (here, the size is arbitrary chosen to be 64 by 64 with 3 channels (RBG) ). For that, we have an **encoder** which goal is to encode your image in a smaller representation (Here, we choose 8 by 8 with 512 channels ), and a **decoder** which goal is to use this representation and get back the original images. 
