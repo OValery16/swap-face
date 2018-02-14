@@ -16,9 +16,9 @@ This coding challenge is to train a swap-face algorithm.
 
 The submission files are the three Ipython Notebooks: 
 
-1.      Training data generation.ipynb
-2.      Train.ipynb
-3.      Prediction.ipynb
+	1. Training data generation.ipynb
+	2. Train.ipynb
+	3. Prediction.ipynb
 
 ## James bond swapping-face
 
@@ -52,6 +52,14 @@ The goal of an autoencoder is to find the function `f(x) = decoder(encoder(x))` 
 
 You should see the output of the encoder as 512 different images of 8 by 8. Each of these images gives some insight about the noise shape, the ear shape ... These features represent the persons face and will be used by the decoder to reconstruct the image.
 
+## Additional Details
+
+The authors of the original implementation contacted me, and mentioned an important point about the architecture of this tool:
+
+	1. In the original deepfakes' architecture, there is no mask segmentation. The only output is reconstructed image.
+	2. The interesting (and smart) parts of deepfakes' algorithm are the usage of warped image as input and shared-weights encoder. The encoder get update information (backprop. information) from both two decoder_A and B. But on the contrary, decoder_A never trained on face B for reconstruction (and vise versa for decoder_B). In other words, the encoder is able to encode both face A and B into good embedding, but decoder A/B can only generates face A/B respectively from the given embedding.
+	3. To swap face of person B to person A in test time, we feed face B in to encoder to get the embedding, and then feed the embedding into decoder A (not decoder B) to get a face B which is face A look-alike. The reason of such method works is that the autoencoder_A (i.e., encoder + decoder_A) treats face B as if its a warped A, so it "reconstruct" face B into a face A look-alike. If we did not train the autoencoder using warped images, it might not able to "treat face B as if its a warped A".
+
 ## Transfer Learning
 
 In contrast to the base version of Deepfakes, we provide a very convenient way to speed up the training process via transfer learning. The idea is to load the weight of a pre-trained network (for the same network configuration but for another face pair such as Donald ump and Nicolas Cage) These weights are used as a starting point to learn new weight. The network will, therefore, converge faster than if it would be trained from scratch. \n",
@@ -68,7 +76,9 @@ If you have any problem. Feel free to contact me or post an issue.
 
 The version I release can be run on any computer or virtual machines (as long as the requirement are installed). 
 
-The nice thing is that you can also run it easily on floydhub (which is a cloud GPU company). Please note that I don't work for this company (just that you often need GPU to train such model)
+## Floydhub
+
+The nice thing is that you can also run it easily on floydhub (which is a cloud GPU company). Please note that I don't work for this company (just that you often need a good GPU to train such model)
 
 ## The weights
 
@@ -92,4 +102,6 @@ The goal of this project is education purpose. With AI area, it becomes easy for
 
 Autoencoder is great tool for producing images which respect the probability distribution of the original ones. However, I believe that Generative Adversarial Networks (such as cycle-gan) remains a great way to train autoencoder, and surpass the generation capability of standard autoencoder.
 
+## Notes
 
+This tutorial aims to help other to understand the value of DeepFakes algorithm. However, if you have additional questions, feel free to open an issue. I want to make this guide as complete as possible and I will add to it any of your comment that would make it more understandable and detailled.
