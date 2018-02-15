@@ -56,9 +56,9 @@ You should see the output of the encoder as 512 different images of 8 by 8. Each
 
 The authors of the original implementation contacted me, and mentioned an important point about the architecture of this tool:
 
-	1. In the original deepfakes' architecture, there is no mask segmentation. The only output is reconstructed image.
-	2. The interesting (and smart) parts of deepfakes' algorithm are the usage of warped image as input and shared-weights encoder. The encoder get update information (backprop. information) from both two decoder_A and B. But on the contrary, decoder_A never trained on face B for reconstruction (and vise versa for decoder_B). In other words, the encoder is able to encode both face A and B into good embedding, but decoder A/B can only generates face A/B respectively from the given embedding.
-	3. To swap face of person B to person A in test time, we feed face B in to encoder to get the embedding, and then feed the embedding into decoder A (not decoder B) to get a face B which is face A look-alike. The reason of such method works is that the autoencoder_A (i.e., encoder + decoder_A) treats face B as if its a warped A, so it "reconstruct" face B into a face A look-alike. If we did not train the autoencoder using warped images, it might not able to "treat face B as if its a warped A".
+1. In the original deepfakes' architecture, there is no mask segmentation. The only output is reconstructed image.
+2. The interesting (and smart) parts of deepfakes' algorithm are the usage of warped image as input and shared-weights encoder. The encoder get update information (backprop. information) from both two decoder_A and B. But on the contrary, decoder_A never trained on face B for reconstruction (and vise versa for decoder_B). In other words, the encoder is able to encode both face A and B into good embedding, but decoder A/B can only generates face A/B respectively from the given embedding.
+3. To swap face of person B to person A in test time, we feed face B in to encoder to get the embedding, and then feed the embedding into decoder A (not decoder B) to get a face B which is face A look-alike. The reason of such method works is that the autoencoder_A (i.e., encoder + decoder_A) treats face B as if its a warped A, so it "reconstruct" face B into a face A look-alike. If we did not train the autoencoder using warped images, it might not able to "treat face B as if its a warped A".
 
 ## Transfer Learning
 
